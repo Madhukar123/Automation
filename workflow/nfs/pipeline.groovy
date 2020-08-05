@@ -1,19 +1,20 @@
-100.times {
-  job('example'+ it) {} 
-}
+pipeline {
+    agent any
 
-pipelineJob('DSL_Demo') {
-
-    def repo = 'https://github.com/Madhukar123/Automation.git'
-   
-    triggers {
-        scm('*/15 * * * *')
-    }
-    
-    definition {
-        cpsScm {
-          scm {
-            git(repo, 'master', { node -> node / 'extensions' << '' } )
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
