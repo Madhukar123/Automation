@@ -21,7 +21,7 @@ pipelineJob('Your App Pipeline') {
         git { 
           remote { url(sshRepo) } 
           branches('master') 
-          scriptPath('Jenkinsfile') 
+          scriptPath('pipeline.groovy') 
           extensions { }  // required as otherwise it may try to tag the repo, which you may not want 
         } 
       } 
