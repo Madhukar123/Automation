@@ -21,7 +21,7 @@ pipelineJob('Your App Pipeline') {
         git { 
           remote { url(sshRepo) } 
           branches('master') 
-          scriptPath('pipeline.groovy') 
+          scriptPath('workflow/nfs/pipeline.groovy') 
           extensions { }  // required as otherwise it may try to tag the repo, which you may not want 
         } 
       } 
