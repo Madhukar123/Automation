@@ -1,8 +1,3 @@
-job('DSL-Tutorial-1-Test') {
-    triggers {
-        scm('H/15 * * * *')
-    }
-    steps {
-        sh 'first project'
-    }
+100.times {
+  job('example'+ it) {} 
 }
