@@ -12,7 +12,7 @@ pipelineJob('DSL_Demo') {
             git {
               remote { url(repo) }
               branches('master', '**/feature*')
-              scriptPath('misc/Jenkinsfile.v2')
+              scriptPath('workflow/nfs/pipeline.groovy')
               extensions { }  // required as otherwise it may try to tag the repo, which you may not want
             }
             }
