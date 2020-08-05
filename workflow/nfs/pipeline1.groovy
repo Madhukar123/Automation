@@ -1,7 +1,7 @@
 pipelineJob('Your App Pipeline') { 
 
-  def repo = 'https://github.com/user/yourApp.git' 
-  def sshRepo = 'git@git.company.com:user/yourApp.git' 
+  def repo = 'https://github.com/Madhukar123/Automation.git' 
+  def sshRepo = 'git@github.com:Madhukar123/Automation.git' 
 
   description("Your App Pipeline") 
   keepDependencies(false) 
