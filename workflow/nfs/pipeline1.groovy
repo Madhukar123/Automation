@@ -1,4 +1,4 @@
-pipelineJob('Your App Pipeline') { 
+pipelineJob('Your App Pipeline') {
 
   def repo = 'https://github.com/Madhukar123/Automation.git' 
   def sshRepo = 'git@github.com:Madhukar123/Automation.git' 
@@ -27,3 +27,4 @@ pipelineJob('Your App Pipeline') {
       } 
     } 
   }
+}
