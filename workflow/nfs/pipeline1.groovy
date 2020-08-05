@@ -1,3 +1,8 @@
-node {
-    jobDsl scriptText: 'job("example-2")'
+pipelineJob('example') {
+    definition {
+        cps {
+            script(readFileFromWorkspace('pipeline.groovy'))
+            sandbox()
+        }
+    }
 }
