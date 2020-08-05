@@ -9,7 +9,12 @@ pipelineJob('DSL_Demo') {
     definition {
         cpsScm {
           scm {
-            git(repo, 'master', { node -> node / 'extensions' << '' } )
+            git {
+              remote { url(repo) }
+              branches('master', '**/feature*')
+              scriptPath('misc/Jenkinsfile.v2')
+              extensions { }  // required as otherwise it may try to tag the repo, which you may not want
+            }
             }
         }
     }
