@@ -1,5 +1,9 @@
 pipelineJob('DSL_Demo') {
 
+      parameters {
+        booleanParam('FLAG', true)
+        choiceParam('OPTION', ['option 1 (default)', 'option 2', 'option 3'])
+    }
   def repo = 'https://github.com/Madhukar123/Automation.git' 
   def sshRepo = 'git@github.com:Madhukar123/Automation.git' 
     
