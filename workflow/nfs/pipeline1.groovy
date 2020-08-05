@@ -1,30 +1,16 @@
-pipelineJob('Your App Pipeline') {
+pipelineJob('DSL_Demo') {
 
   def repo = 'https://github.com/Madhukar123/Automation.git' 
   def sshRepo = 'git@github.com:Madhukar123/Automation.git' 
-
-  description("Your App Pipeline") 
-  keepDependencies(false) 
-
-  properties{ 
-
-    githubProjectUrl (repo) 
-    rebuild { 
-      autoRebuild(false) 
-    } 
-  } 
-
-  definition { 
-
-    cpsScm { 
-      scm { 
-        git { 
-          remote { url(sshRepo) } 
-          branches('master') 
-          scriptPath('workflow/nfs/pipeline.groovy') 
-          extensions { }  // required as otherwise it may try to tag the repo, which you may not want 
-        } 
-      } 
-    } 
-  }
+  triggers {
+        scm('*/15 * * * *')
+    }
+    
+    definition {
+        cpsScm {
+          scm {
+            git(repo, 'master', { node -> node / 'extensions' << '' } )
+            }
+        }
+    }
 }
